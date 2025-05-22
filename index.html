@@ -1,0 +1,94 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>GymRat App | Fitness Integral</title>  
+  <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Gym<span>Rat</span></div>
+      <ul class="nav-links">
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#mvp" id="mvpNav">MVP</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Transforma tu cuerpo, transforma tu vida</h1>
+      <p class="hero-sub">Nutrición, entrenamiento y comunidad en un solo lugar.</p>
+      <button id="downloadBtn" aria-haspopup="dialog">¡Quiero Probarla! <span class="beta-badge">MVP Beta</span></button>
+    </section>
+
+    <section class="benefits" id="beneficios">
+      <h2>¿Por qué GymRat?</h2>
+      <div class="benefit-list">
+        <div class="benefit">
+          <img src="https://img.icons8.com/ios-filled/50/ dumbbell.png" alt="Rutinas personalizadas">
+          <h3>Rutinas Personalizadas</h3>
+          <p>Entrena según tus objetivos y tu nivel, en casa o en el gym.</p>
+        </div>
+        <div class="benefit">
+          <img src="https://img.icons8.com/ios-filled/50/apple.png" alt="Nutrición">
+          <h3>Nutrición Inteligente</h3>
+          <p>Planes alimenticios ajustados a tu progreso y preferencias.</p>
+        </div>
+        <div class="benefit">
+          <img src="https://img.icons8.com/ios-filled/50/group-foreground-selected.png" alt="Comunidad">
+          <h3>Comunidad Fitness</h3>
+          <p>Motívate y comparte retos con otros usuarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonios">
+      <h2>Historias de Éxito</h2>
+      <div class="testimonial-list">
+        <div class="testimonial">
+          <p>"¡En 3 meses logré lo que nunca pude solo!"</p>
+          <span>- Carlos, 29</span>
+        </div>
+        <div class="testimonial">
+          <p>"La app me mantiene motivada y conectada."</p>
+          <span>- Ana, 24</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="fake-door" id="mvp">
+      <h2>¿Listo para ser parte del cambio?</h2>
+      <p>Regístrate para probar el MVP antes que nadie.</p>
+      <button id="downloadBtn2" aria-haspopup="dialog">Acceso Anticipado</button>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal-content">
+      <span class="close" role="button" aria-label="Cerrar">&times;</span>
+      <h3 id="modalTitle">¡Únete a la lista beta!</h3>
+      <form id="waitlistForm">
+        <input type="email" id="email" placeholder="Tu email" required autocomplete="email">
+        <button type="submit">Enviar</button>
+      </form>
+      <p class="modal-info">*Te contactaremos cuando esté disponible.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <span> 2025 GymRat App</span>
+      <div class="footer-links">
+        <a href="#">Contacto</a> · <a href="#">Términos</a> · <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>  
+</html>
