@@ -69,7 +69,7 @@
     <div class="modal-content">
       <span class="close" role="button" aria-label="Cerrar">&times;</span>
       <h3 id="modalTitle">¡Únete a la lista beta!</h3>
-      <form id="waitlistForm">
+      <form id="waitlistForm" action="https://formsubmit.co/your@email.com" method="POST">
         <input type="email" id="email" placeholder="Tu email" required autocomplete="email">
         <button type="submit">Enviar</button>
       </form>
@@ -86,9 +86,7 @@
     </div>
   </footer>
 
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-  <script src="firebase-config.js"></script>
-  <script src="app.js"></script>
-</body>  
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
 </html>

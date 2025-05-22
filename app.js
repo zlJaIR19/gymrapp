@@ -1,3 +1,6 @@
+import { db } from './firebase-config.js';
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
 // Mostrar modal con animación y accesibilidad
 const modal = document.getElementById("modal");
 const openBtns = [
@@ -52,16 +55,15 @@ if (mvpNav) {
 
 // Formulario Fake Door Test
 const waitlistForm = document.getElementById("waitlistForm");
-waitlistForm.addEventListener("submit", (e) => {
+waitlistForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value;
-  db.collection("waitlist").add({ email, timestamp: firebase.firestore.FieldValue.serverTimestamp() })
-    .then(() => {
-      alert("¡Gracias! Te avisaremos cuando esté lista.");
-      closeModal();
-      window.location.href = "https://forms.gle/XYZ123"; // Link a encuesta
-    })
-    .catch((error) => {
-      console.error("Error: ", error);
-    });
+  try {
+    await addDoc(collection(db, "waitlist"), { email, timestamp: serverTimestamp() });
+    alert("¡Gracias! Te avisaremos cuando esté lista.");
+    closeModal();
+    window.location.href = "https://forms.gle/XYZ123"; // Link a encuesta
+  } catch (error) {
+    console.error("Error: ", error);
+  }
 });
