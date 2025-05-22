@@ -62,7 +62,7 @@ waitlistForm.addEventListener("submit", async (e) => {
     await addDoc(collection(db, "waitlist"), { email, timestamp: serverTimestamp() });
     alert("¡Gracias! Te avisaremos cuando esté lista.");
     closeModal();
-    window.location.href = "https://forms.gle/XYZ123"; // Link a encuesta
+    // Link a encuesta
   } catch (error) {
     console.error("Error: ", error);
   }
